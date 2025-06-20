@@ -1,17 +1,14 @@
 # https://adventofcode.com/2015/day/1
 
-def part1():
-  with open("2015/day1/input.txt", "r") as f:
-    print(sum([1 if f == '(' else -1 for f in f.readline()]))
+# part 1
+with open("2015/day1/input.txt", "r") as f:
+    print(sum([1 if s == "(" else -1 for s in f.readline()]))
 
-def part2():
-  with open("2015/day1/input.txt", "r") as f:
-    curr, floors = 0, f.readline()
-    for i, f in enumerate(floors):
-      curr += 1 if f == '(' else -1
-      if curr < 0:
-        print(i+1)
-        return
-
-part1()
-part2()
+# part 2
+with open("2015/day1/input.txt", "r") as f:
+    curr = 0
+    for i, s in enumerate(f.readline()):
+        curr += 1 if s == "(" else -1
+        if curr < 0:
+            print(i+1)
+            break
