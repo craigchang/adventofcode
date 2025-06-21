@@ -1,22 +1,17 @@
 # https://adventofcode.com/2015/day/2
 
-import re
+# part 1
+paper = 0
+with open("2015/day2/input.txt") as f:
+    for d in f.readlines():
+        l, w, h = list(map(int, d.split('x')))
+        paper += 2*l*w + 2*w*h + 2*h*l + min(l*w, w*h, h*l)
+print(paper)
 
-def part1():
-  with open("2015/day2/input.txt", "r") as f:
-    area = 0
-    for box in f.readlines():
-      l,w,h = [int(i) for i in box.split("x")]
-      area += 2*l*w + 2*w*h + 2*h*l + min(l*w, w*h, h*l)
-    print(area)
-
-def part2():
-  with open("2015/day2/input.txt", "r") as f:
-    area = 0
-    for box in f.readlines():
-      l1,l2,l3 = sorted([int(i) for i in box.split("x")])
-      area += 2*l1 + 2*l2 + l1*l2*l3
-    print(area)
-    
-part1()
-part2()
+# part 2
+paper = 0
+with open("2015/day2/input.txt") as f:
+    for d in f.readlines():
+        l, w, h = list(map(int, d.split('x')))
+        paper += sum(sorted([l,w,h])[0:2]) * 2 + (l*w*h)
+print(paper)
