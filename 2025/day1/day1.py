@@ -1,6 +1,6 @@
 # https://adventofcode.com/2025/day/1
 
-import regex as re
+import re
 
 def read_lines(filename="input.txt"):
     with open(f"2025/day1/{filename}", "r") as f:

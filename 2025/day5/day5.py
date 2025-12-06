@@ -1,13 +1,5 @@
 # https://adventofcode.com/2025/day/5
 
-def read_input(filename="input.txt"):
-    with open(f"2025/day5/{filename}", "r") as f:
-        return f.read().strip()
-
-def read_lines(filename="input.txt"):
-    with open(f"2025/day5/{filename}", "r") as f:
-        return [line.strip() for line in f.readlines()]
-
 def read_file(filename="input.txt"):
     fresh_ranges_IDs = []
     available_IDs = []
@@ -19,7 +11,6 @@ def read_file(filename="input.txt"):
                 fresh_ranges_IDs.append(tuple(map(int, r.strip().split("-"))))
             elif r and "-" not in r:
                 available_IDs.append(int(r.strip()))
-
     return fresh_ranges_IDs, available_IDs
 
 def is_id_fresh(fresh_ranges_IDs, current_id):
